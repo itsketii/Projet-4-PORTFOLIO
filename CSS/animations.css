@@ -1,0 +1,236 @@
+/* animations.css : animations et effets au survol */
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+  }
+}
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateY(8px);
+  }
+}
+@keyframes wordUp {
+  from {
+    transform: translateY(110%);
+  }
+}
+@keyframes floaty {
+  50% {
+    translate: 0 -9px;
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes sweep {
+  to {
+    transform: translateX(260%);
+  }
+}
+@keyframes wiggle {
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(8deg);
+  }
+}
+
+/* barre de progression du scroll */
+#prog {
+  position: fixed;
+  top: env(safe-area-inset-top, 0px);
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 40;
+  background: linear-gradient(90deg, var(--acc), #c9b4ff);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+/* apparition des cartes au scroll (accueil et projets) */
+.rv:not(.in) {
+  opacity: 0;
+}
+.rv.in {
+  animation: revealUp 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  animation-delay: var(--rd, 0s);
+}
+.rv.in .pill,
+.cvside .pill {
+  animation: popIn 0.45s cubic-bezier(0.3, 1.4, 0.5, 1) backwards;
+  animation-delay: calc(var(--k, 0) * 40ms + 0.35s);
+}
+#home:not([hidden]),
+#projects:not([hidden]) {
+  animation: fadein 0.5s ease;
+}
+
+/* navbar : soulignement qui se dessine */
+.links a {
+  padding-bottom: 3px;
+  background: linear-gradient(var(--acc), var(--acc)) 0 100%/0 2px no-repeat;
+  transition:
+    background-size 0.35s ease,
+    color 0.2s;
+}
+.links a:hover,
+.links a.cur {
+  background-size: 100% 2px;
+}
+.links a.cur {
+  text-decoration: none;
+}
+
+/* cartes : halo violet qui suit le curseur */
+:where(.card) {
+  position: relative;
+  isolation: isolate;
+  transition: border-color 0.3s;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in srgb, var(--acc) 16%, transparent),
+    transparent 65%
+  );
+}
+.card:hover::before {
+  opacity: 1;
+}
+.card:hover {
+  border-color: color-mix(in srgb, var(--acc) 45%, var(--line));
+}
+
+/* boutons : reflet qui traverse, léger saut, appui */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -60%;
+  width: 50%;
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: translateX(-120%);
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn:hover::after {
+  animation: sweep 0.7s ease;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* titres : les mots montent un par un */
+.w {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
+}
+.w > span {
+  display: inline-block;
+  animation: wordUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  animation-delay: calc(var(--w, 0) * 90ms + 0.1s);
+}
+
+/* le K flotte doucement */
+.avatar {
+  animation: floaty 6s ease-in-out infinite;
+}
+
+/* images de projet : le dégradé glisse au survol */
+.shot {
+  background-size: 180% 180%;
+  background-position: 0 0;
+  transition: background-position 0.9s ease;
+}
+.proj:hover .shot {
+  background-position: 100% 100%;
+}
+
+/* cartes du swipe : la suivante monte de l'arrière-plan */
+.dc:not(.on) {
+  transform: scale(0.94) translateY(12px);
+}
+.dc.out {
+  transform: translateX(-45%) rotate(-6deg);
+}
+
+/* pied de page */
+.fband:hover .flogo {
+  animation: wiggle 0.6s;
+}
+.avail {
+  position: relative;
+  overflow: hidden;
+}
+.avail::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -40%;
+  width: 35%;
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(255, 255, 255, 0.18),
+    transparent
+  );
+  animation: sweep 3.6s ease-in-out infinite;
+}
+dialog[open]::backdrop {
+  animation: fadein 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rv:not(.in) {
+    opacity: 1;
+  }
+  .rv.in,
+  .rv.in .pill,
+  .cvside .pill,
+  .avatar,
+  .w > span,
+  .avail::after,
+  #home,
+  #projects,
+  .fband:hover .flogo {
+    animation: none !important;
+  }
+  .btn::after {
+    display: none;
+  }
+  #prog {
+    display: none;
+  }
+}

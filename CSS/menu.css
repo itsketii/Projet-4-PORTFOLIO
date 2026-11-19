@@ -1,0 +1,105 @@
+/* menu.css : menu mobile et ajustements pour téléphone (à charger en dernier) */
+#burger path {
+  transition:
+    transform 0.3s,
+    opacity 0.2s;
+  transform-origin: 12px 12px;
+}
+nav.open #burger .l1 {
+  transform: rotate(45deg) translateY(5px);
+}
+nav.open #burger .l2 {
+  opacity: 0;
+}
+nav.open #burger .l3 {
+  transform: rotate(-45deg) translateY(-5px);
+}
+#scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  background: rgba(10, 6, 20, 0.38);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s,
+    visibility 0s 0.3s;
+}
+body.menu #scrim {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s;
+}
+@media (max-width: 800px) {
+  .sideimg {
+    flex: none;
+    height: auto;
+    aspect-ratio: 4/3;
+  }
+  .links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    width: auto;
+    order: 0;
+    padding: 10px;
+    gap: 4px;
+    transform: translateY(-10px) scale(0.98);
+    transform-origin: top center;
+    background: color-mix(in srgb, var(--card) 94%, transparent);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 0 24px 50px -24px rgba(20, 10, 50, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 0.25s,
+      transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+      visibility 0s 0.3s;
+  }
+  nav.open .links {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    transition:
+      opacity 0.25s,
+      transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .links a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    border-radius: 14px;
+    font-size: 1.05rem;
+    color: var(--ink);
+    background-image: none;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition:
+      opacity 0.25s,
+      transform 0.25s,
+      background 0.2s;
+  }
+  nav.open .links a {
+    opacity: 1;
+    transform: none;
+    transition-delay: calc(var(--n, 0) * 50ms + 0.08s);
+  }
+  .links a::after {
+    content: "\2192";
+    color: var(--mut);
+  }
+  .links a.cur {
+    background: var(--pill);
+  }
+}
