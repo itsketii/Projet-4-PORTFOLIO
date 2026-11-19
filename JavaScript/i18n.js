@@ -90,20 +90,32 @@ var EN = {
     bac: "High school diploma",
   },
   T = [].slice.call(document.querySelectorAll("[data-t]")),
-  L = document.getElementById("lang");
+  L = document.getElementById("lang"),
+  cvDownload = document.getElementById("dlcv");
+
+function syncCvDownload(en) {
+  if (!cvDownload) {
+    return;
+  }
+  cvDownload.href = en ? "Docs/CV_EN.pdf" : "Docs/CV.pdf";
+  cvDownload.download = en ? "CV_Kouadio_Ketsia_EN.pdf" : "CV_Kouadio_Ketsia.pdf";
+}
+
 T.forEach(function (e) {
   e.dataset.fr = e.textContent;
 });
+syncCvDownload(false);
 L.addEventListener("click", function () {
   var en = document.documentElement.lang !== "en";
   document.documentElement.lang = en ? "en" : "fr";
-  T.forEach(function (e) {
+  document.querySelectorAll("[data-t]").forEach(function (e) {
     e.textContent = en ? EN[e.dataset.t] : e.dataset.fr;
   });
   document.querySelectorAll("[data-lang]").forEach(function (e) {
     e.hidden = e.dataset.lang !== (en ? "en" : "fr");
   });
   L.textContent = en ? "FR" : "EN";
+  syncCvDownload(en);
 });
 document.querySelectorAll("[data-ph]").forEach(function (e) {
   e.dataset.phf = e.placeholder;
