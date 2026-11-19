@@ -1,12 +1,871 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="CSS/styles.css">
-  <title>Mon portfolio</title>
-</head>
-<body>
-  <h1>Bienvenue sur mon portfolio</h1>
-</body>
-<script src="JavaScript/animations.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Ketsia | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio de Ketsia Kouadio, étudiante en informatique et génie logiciel à l'IIT : mobile, web et données."
+    />
+    <link rel="icon" href="Images/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="Images/favicon.png" />
+    <link rel="apple-touch-icon" href="Images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="stylesheet" href="CSS/animations.css" />
+    <link rel="stylesheet" href="CSS/menu.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <nav id="nav">
+        <a class="logo" href="#home">Ketsia</a>
+        <div class="links">
+          <a href="#home" data-t="n1">Accueil</a
+          ><a href="#about" data-t="n2">À propos</a
+          ><a href="#projects" data-t="n3">Projets</a
+          ><a href="#cv" data-t="n4">CV</a>
+        </div>
+        <div class="icons">
+          <a
+            class="ico"
+            href="https://github.com/itsketii"
+            data-link="github"
+            aria-label="GitHub"
+            ><svg viewBox="0 0 24 24">
+              <path
+                d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.300.7-1.600-2.600-.3-5.300-1.300-5.300-5.700 0-1.300.5-2.300 1.200-3.100-.1-.3-.5-1.500.1-3.100 0 0 1-.3 3.200 1.200a11 11 0 0 1 5.800 0c2.200-1.500 3.200-1.200 3.200-1.200.6 1.600.2 2.800.1 3.100.8.800 1.200 1.800 1.200 3.100 0 4.400-2.700 5.400-5.300 5.700.4.400.8 1.100.8 2.200v3.200c0 .3.2.7.8.6A11.500 11.500 0 0 0 12 .5Z"
+              /></svg
+          ></a>
+          <a class="ico" href="#" data-link="linkedin" aria-label="LinkedIn"
+            ><svg viewBox="0 0 24 24">
+              <path
+                d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm6.5 0h3.8v1.600h.1c.5-1 1.800-1.900 3.700-1.900 4 0 4.700 2.600 4.700 6V21h-4v-5.200c0-1.300 0-2.900-1.800-2.900s-2 1.400-2 2.800V21h-4V9.500Z"
+              /></svg
+          ></a>
+          <a class="ico" href="mailto:ketsia.kouadio@iit.ci" aria-label="E-mail"
+            ><svg viewBox="0 0 24 24">
+              <path
+                d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 7.500L4 7.500V17h16V7.500l-8 5Zm0-2L19.500 7h-15L12 10.500Z"
+              /></svg
+          ></a>
+          <button class="ico" id="burger" aria-label="Menu">
+            <svg
+              viewBox="0 0 24 24"
+              style="
+                stroke: currentColor;
+                stroke-width: 2;
+                fill: none;
+                stroke-linecap: round;
+              "
+            >
+              <path class="l1" d="M4 7h16" />
+              <path class="l2" d="M4 12h16" />
+              <path class="l3" d="M4 17h16" />
+            </svg>
+          </button>
+          <button class="ico" id="lang" aria-label="Langue / Language">
+            EN
+          </button>
+          <button class="ico" id="theme" aria-label="Changer de thème">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 3a9 9 0 1 0 9 9c0-.5 0-1-.1-1.400A6 6 0 0 1 12.400 3.100 9 9 0 0 0 12 3Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <main id="home" class="bento view">
+        <section class="card about">
+          <div class="avatar" aria-hidden="true">K</div>
+          <div>
+            <h2>Kouadio Ketsia</h2>
+            <p data-t="about">
+              Étudiante en 2e année en Informatique et Génie Logiciel à l'IIT
+              (Institut Ivoirien de Technologie) de Grand-Bassam. J'apprends la
+              programmation et le développement. J'aime donner vie à des projets
+              qui résolvent des problèmes du quotidien tout en laissant libre
+              cours à mon imagination dans le processus. Et j'apprends les bases
+              de données pour viser, à terme, le métier de data engineer.
+            </p>
+            <div class="pills" style="margin-top: 14px">
+              <span class="pill" data-t="c1">1re place au Business Game</span
+              ><span class="pill" data-t="c2"
+                >2e place au hackathon de la Journée du Code</span
+              ><a class="btn soft" href="#about" data-t="more2"
+                >En savoir plus</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2 data-t="mp">Mes projets</h2>
+          <div class="mini">
+            <div class="b1"></div>
+            <div class="b2"></div>
+            <article class="top dc on">
+              <span class="tag" data-t="t0">À savoir</span>
+              <h3 data-t="h0">Il s'agit surtout de projets académiques</h3>
+              <p data-t="p0">
+                La plupart de mes projets viennent de mes cours à l'IIT. Chacun
+                d'entre eux m'a appris quelque chose de nouveau. Glissez pour
+                les découvrir.
+              </p>
+              <button class="swipe" aria-label="Suivant / Next">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 8l-4 4 4 4M17 8l4 4-4 4M3 12h18" />
+                </svg>
+              </button>
+            </article>
+            <article class="top dc">
+              <span class="tag">Python / Selenium</span>
+              <h3>Outil de Web Scraping Python</h3>
+              <p data-t="p1">
+                Application console en Python qui extrait, nettoie et analyse
+                automatiquement des données produits sur Amazon.
+              </p>
+              <button class="swipe" aria-label="Suivant / Next">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 8l-4 4 4 4M17 8l4 4-4 4M3 12h18" />
+                </svg>
+              </button>
+            </article>
+            <article class="top dc">
+              <span class="tag">C# / .NET 8</span>
+              <h3>Gestion universitaire C# / .NET 8</h3>
+              <p data-t="p2">
+                Application Windows Forms pour gérer les étudiants,
+                inscriptions, plannings et statistiques universitaires.
+              </p>
+              <button class="swipe" aria-label="Suivant / Next">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 8l-4 4 4 4M17 8l4 4-4 4M3 12h18" />
+                </svg>
+              </button>
+            </article>
+            <article class="top dc">
+              <span class="tag">Flask / SQLite</span>
+              <h3>Mini-Bibliothèque</h3>
+              <p data-t="p3">
+                Une bibliothèque personnelle pour gérer livres, films, séries,
+                jeux, musiques et mangas.
+              </p>
+              <button class="swipe" aria-label="Suivant / Next">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 8l-4 4 4 4M17 8l4 4-4 4M3 12h18" />
+                </svg>
+              </button>
+            </article>
+            <article class="top dc">
+              <span class="tag">Docker / Docker Compose</span>
+              <h3>OM Bulk Deletion Portal</h3>
+              <p data-t="p5">
+                Fork et conteneurisation d'un portail de transformation de
+                fichiers Excel contenant des numéros MSISDN.
+              </p>
+              <button class="swipe" aria-label="Suivant / Next">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 8l-4 4 4 4M17 8l4 4-4 4M3 12h18" />
+                </svg>
+              </button>
+            </article>
+          </div>
+        </section>
+
+        <div class="right">
+          <section class="card">
+            <h2 data-t="sk">Compétences</h2>
+            <div class="pills">
+              <span class="pill">Flutter</span><span class="pill">Dart</span
+              ><span class="pill">Python</span><span class="pill">Java</span
+              ><span class="pill">C</span><span class="pill">HTML/CSS</span
+              ><span class="pill">JavaScript</span
+              ><span class="pill">Bootstrap</span><span class="pill">SQL</span
+              ><span class="pill">MySQL</span
+              ><span class="pill">SQL SERVER</span><span class="pill">C#</span
+              ><span class="pill">Git</span><span class="pill">Docker</span
+              ><span class="pill">.NET</span><span class="pill">Flask</span>
+            </div>
+          </section>
+          <section id="resume" class="card resume">
+            <h2 data-t="cv">CV</h2>
+            <div class="cv">
+              <span data-t="cvt">Mon parcours en détail</span
+              ><a class="btn" href="#cv" data-t="open">Ouvrir</a>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <section id="projects" class="view" hidden>
+        <div class="side">
+          <img
+            class="sideimg"
+            src="Images/Projet/github-profil.webp"
+            alt="Aperçu de mon profil GitHub"
+            width="673"
+            height="927"
+          />
+          <h2 data-t="ph">Quelques projets récents, du mobile au web.</h2>
+          <a
+            class="btn soft"
+            href="https://github.com/itsketii"
+            target="_blank"
+            rel="noopener"
+            data-link="github"
+            data-t="more"
+            >Voir plus</a
+          >
+        </div>
+        <div class="stack">
+          <article
+            class="proj"
+            data-repo="webscraping"
+            style="--i: 0; --c: var(--p1)"
+          >
+            <div class="pills">
+              <span class="pill">Python</span><span class="pill">Selenium</span
+              ><span class="pill">SQLite</span>
+            </div>
+            <h3>Outil de Web Scraping Python</h3>
+            <img
+              class="shot"
+              src="Images/Projet/web-scraping.png"
+              alt="Tableau de bord de l'application de gestion universitaire"
+            />
+            <p data-t="pd1">
+              Application MVC permettant d'extraire, dédoublonner et exporter
+              des données produits, puis d'analyser leurs prix.
+            </p>
+            <div class="project-details" data-lang="fr">
+              <h4>Objectif</h4>
+              <p>
+                Extraire automatiquement des données produits Amazon via
+                Selenium, depuis un menu console ou une page HTML locale.
+              </p>
+              <h4>Fonctionnalités</h4>
+              <ul>
+                <li>
+                  Recherche par mot-clé, filtres, exclusions et pagination.
+                </li>
+                <li>Nettoyage, déduplication et export CSV.</li>
+                <li>Stockage SQLite et historique des recherches.</li>
+                <li>
+                  Statistiques de prix, comparaison de marques et graphiques
+                  Matplotlib.
+                </li>
+              </ul>
+              <h4>Technologies</h4>
+              <p>
+                Python, Selenium, SQLite, Matplotlib, architecture MVC et
+                Git/GitHub.
+              </p>
+              <p>
+                <strong>Limite :</strong> collecte pédagogique limitée ; respect
+                des conditions Amazon et arrêt sur CAPTCHA.
+              </p>
+            </div>
+            <div class="project-details" data-lang="en" hidden>
+              <h4>Goal</h4>
+              <p>
+                Automatically extract Amazon product data with Selenium through
+                a console menu or a saved HTML page.
+              </p>
+              <h4>Features</h4>
+              <ul>
+                <li>Keyword search, filtering, exclusions and pagination.</li>
+                <li>Cleaning, deduplication and CSV export.</li>
+                <li>SQLite storage and search history.</li>
+                <li>
+                  Price statistics, brand comparison and Matplotlib charts.
+                </li>
+              </ul>
+              <h4>Technologies</h4>
+              <p>
+                Python, Selenium, SQLite, Matplotlib, MVC architecture and
+                Git/GitHub.
+              </p>
+              <p>
+                <strong>Limit:</strong> limited educational collection; Amazon
+                terms are respected and CAPTCHA stops the program.
+              </p>
+            </div>
+            <button class="btn" data-open data-t="view">Voir le projet</button>
+          </article>
+          <article
+            class="proj"
+            data-repo="gestionuniversitaire"
+            style="--i: 1; --c: var(--p2)"
+          >
+            <div class="pills">
+              <span class="pill">C#</span><span class="pill">.NET 8</span
+              ><span class="pill">SQL Server</span>
+            </div>
+            <h3>Application de gestion universitaire C# / .NET 8</h3>
+            <img
+              class="shot"
+              src="Images/Projet/gestion-universite.png"
+              alt="Tableau de bord de l'application de gestion universitaire"
+            />
+            <p data-t="pd2">
+              Application Windows Forms à architecture 3 couches pour la gestion
+              administrative et académique d'une université.
+            </p>
+            <div class="project-details" data-lang="fr">
+              <h4>Objectif</h4>
+              <p>Application de bureau permettant de gérer les inscriptions, classes, cours, séances, absences, statistiques, impressions et exports d'une université.</p>
+              <h4>Fonctionnalités principales</h4>
+              <ul>
+                <li>Authentification par e-mail et mot de passe avec comptes enregistrés en base.</li>
+                <li>Mots de passe sous forme de hash SHA-256 et accès selon les rôles Administrateur, Scolarité et Enseignant.</li>
+                <li>Tableau de bord, statistiques, prochaines séances et graphiques d'inscriptions.</li>
+                <li>Gestion des étudiants, inscriptions, classes, cours, enseignants, matières, salles et utilisateurs.</li>
+                <li>Import Excel des étudiants avec contrôles, validation et inscription optionnelle dans une classe.</li>
+                <li>Planification avec détection des conflits de salle, enseignant et classe.</li>
+                <li>Feuilles d'appel, impressions, exports CSV/PDF et mode clair ou sombre.</li>
+              </ul>
+              <h4>Architecture</h4>
+              <p>Architecture à trois couches : modèles métier, accès aux données et interfaces Windows Forms / UserControl.</p>
+              <h4>Technologies</h4>
+              <p>C#, .NET 8, Windows Forms, SQL Server, Microsoft.Data.SqlClient, ClosedXML, FontAwesome.Sharp et procédures stockées.</p>
+              <h4>Règles importantes</h4>
+              <p>Une seule inscription par étudiant et par année, une année académique active, contrôle des chevauchements et vérification de la capacité des salles.</p>
+              <h4>Équipe</h4>
+              <p>Kouadio Ketsia, Kodja Esther, Essane Jean-Noël et Biagou Marc-Aurel.</p>
+              <p><strong>Contexte :</strong> projet académique réalisé pour le cours de Base de Données II à l'IIT.</p>
+            </div>
+            <div class="project-details" data-lang="en" hidden>
+              <h4>Goal</h4>
+              <p>Desktop application for managing university registrations, classes, courses, schedules, attendance, statistics, printing and exports.</p>
+              <h4>Main features</h4>
+              <ul>
+                <li>Email/password authentication with database-backed accounts.</li>
+                <li>SHA-256 password hashes and access according to Administrator, School Services and Teacher roles.</li>
+                <li>Dashboard, statistics, upcoming sessions and registration charts.</li>
+                <li>Student, registration, class, course, teacher, subject, room and user management.</li>
+                <li>Excel student import with validation and optional class registration.</li>
+                <li>Schedule planning with room, teacher and class conflict detection.</li>
+                <li>Attendance sheets, printing, CSV/PDF exports and light/dark themes.</li>
+              </ul>
+              <h4>Architecture</h4>
+              <p>Three-layer architecture: business models, data access and Windows Forms / UserControl interfaces.</p>
+              <h4>Technologies</h4>
+              <p>C#, .NET 8, Windows Forms, SQL Server, Microsoft.Data.SqlClient, ClosedXML, FontAwesome.Sharp and stored procedures.</p>
+              <h4>Important rules</h4>
+              <p>One registration per student and academic year, one active year, schedule collision checks and room capacity validation.</p>
+              <h4>Team</h4>
+              <p>Kouadio Ketsia, Kodja Esther, Essane Jean-Noël and Biagou Marc-Aurel.</p>
+              <p><strong>Context:</strong> academic project created for the Database II course at IIT.</p>
+            </div>
+            <button class="btn" data-open data-t="view">Voir le projet</button>
+          </article>
+          <article
+            class="proj"
+            data-repo="minibiblio"
+            style="--i: 2; --c: var(--p3)"
+          >
+            <div class="pills">
+              <span class="pill">Python</span><span class="pill">Flask</span
+              ><span class="pill">SQLite</span
+              ><span class="pill">HTML/CSS/JS</span>
+            </div>
+            <h3>Mini-Bibliothèque</h3>
+            <img
+              class="shot"
+              src="Images/Projet/mini-bibliotheque.png"
+              alt="Interface de l'application Mini-Bibliothèque"
+            />
+            <p data-t="pd3">
+              Application web personnelle avec API REST pour gérer des contenus
+              et suivre leur statut, leur genre et leur progression.
+            </p>
+            <div class="project-details" data-lang="fr">
+              <h4>Objectif</h4>
+              <p>
+                Centraliser dans une bibliothèque personnelle les livres, films,
+                séries, jeux, musiques et mangas.
+              </p>
+              <h4>Fonctionnalités</h4>
+              <ul>
+                <li>CRUD pour six catégories de contenus.</li>
+                <li>Genres, statuts, notes, avis et suivi de progression.</li>
+                <li>Recherche et filtres par catégorie ou statut.</li>
+                <li>Interface d'ajout, modification et suppression.</li>
+              </ul>
+              <h4>Architecture</h4>
+              <p>
+                Backend Flask / SQLite avec API REST et interface HTML,
+                JavaScript et CSS.
+              </p>
+            </div>
+            <div class="project-details" data-lang="en" hidden>
+              <h4>Goal</h4>
+              <p>
+                Centralize books, movies, shows, games, music and manga in a
+                personal library.
+              </p>
+              <h4>Features</h4>
+              <ul>
+                <li>CRUD operations for six content categories.</li>
+                <li>
+                  Genres, statuses, ratings, reviews and progress tracking.
+                </li>
+                <li>Search and filtering by category or status.</li>
+                <li>Add, edit and delete interface.</li>
+              </ul>
+              <h4>Architecture</h4>
+              <p>
+                Flask / SQLite backend with a REST API and HTML, JavaScript and
+                CSS interface.
+              </p>
+            </div>
+            <button class="btn" data-open data-t="view">Voir le projet</button>
+          </article>
+          <article
+            class="proj"
+            data-repo="ombulk"
+            style="--i: 3; --c: var(--p1)"
+          >
+            <div class="pills">
+              <span class="pill">Docker</span
+              ><span class="pill">Docker Compose</span
+              ><span class="pill">MySQL</span>
+            </div>
+            <h3>OM Bulk Deletion Portal</h3>
+            <img
+              class="shot"
+              src="Images/Projet/om-bulk-deletion.png"
+              alt="Interface du portail OM Bulk Deletion"
+            />
+            <p data-t="pd5">
+              Projet Next.js / Node.js permettant de transformer des fichiers
+              Excel en deux fichiers TXT conformes aux règles métier. Fork
+              compris et conteneurisé avec Docker Compose.
+            </p>
+            <div class="project-details" data-lang="fr">
+              <h4>Objectif</h4>
+              <p>
+                Remplacer un traitement Excel manuel par un portail automatisé
+                de formatage de numéros MSISDN.
+              </p>
+              <h4>Fonctionnalités</h4>
+              <ul>
+                <li>Authentification JWT et gestion des sessions.</li>
+                <li>Import, validation et stockage de fichiers Excel.</li>
+                <li>
+                  Lecture de la première colonne et génération de deux fichiers
+                  TXT identiques.
+                </li>
+                <li>
+                  Historique des traitements et téléchargement des résultats.
+                </li>
+              </ul>
+              <h4>Technologies</h4>
+              <p>
+                Next.js, React, Tailwind CSS, Node.js, Express, MySQL, ExcelJS,
+                Multer, Docker et Docker Compose.
+              </p>
+              <p>
+                <strong>Ma participation :</strong> fork du projet,
+                compréhension du fonctionnement, configuration Docker et
+                conteneurisation des services.
+              </p>
+              <p>
+                <strong>Contexte :</strong> l'application ne réalise aucune
+                suppression ou opération télécom réelle ; elle génère uniquement
+                des fichiers formatés.
+              </p>
+            </div>
+            <div class="project-details" data-lang="en" hidden>
+              <h4>Goal</h4>
+              <p>
+                Replace a manual Excel process with an automated MSISDN number
+                formatting portal.
+              </p>
+              <h4>Features</h4>
+              <ul>
+                <li>JWT authentication and session management.</li>
+                <li>Excel upload, validation and storage.</li>
+                <li>
+                  First-column reading and generation of two identical TXT
+                  files.
+                </li>
+                <li>Processing history and result downloads.</li>
+              </ul>
+              <h4>Technologies</h4>
+              <p>
+                Next.js, React, Tailwind CSS, Node.js, Express, MySQL, ExcelJS,
+                Multer, Docker and Docker Compose.
+              </p>
+              <p>
+                <strong>My contribution:</strong> project fork, code
+                understanding, Docker configuration and service
+                containerization.
+              </p>
+              <p>
+                <strong>Context:</strong> the application performs no real
+                deletion or telecom provisioning; it only generates formatted
+                files.
+              </p>
+            </div>
+            <button class="btn" data-open data-t="view">Voir le projet</button>
+          </article>
+        </div>
+      </section>
+      <section id="about" class="view page" hidden>
+        <div class="card ab-hero">
+          <div class="avatar" aria-hidden="true">K</div>
+          <div>
+            <h2 data-t="a1">Mon parcours</h2>
+            <p data-t="a2">
+              Après l'obtention de mon BAC D en 2025, j'ai rejoint l'IIT avec
+              l'envie de transformer ma curiosité pour la technologie en
+              compétences concrètes. Ma première année m'a permis de consolider
+              mes bases en programmation, de participer à des hackathons et de
+              réaliser un stage de découverte au Groupement Orange Service
+              (GOS). Ces expériences m'ont appris à travailler avec méthode et
+              à mieux comprendre les exigences du monde professionnel.
+              Aujourd'hui en 2e année d'Informatique et Génie Logiciel, je
+              poursuis cette progression avec la même rigueur. Mon objectif est
+              de m'orienter vers la data, plus particulièrement le data
+              engineering. Je suis convaincue que les données sont au cœur de
+              l'évolution de l'informatique et qu'elles constituent aussi le
+              socle sur lequel l'intelligence artificielle peut se développer.
+            </p>
+          </div>
+        </div>
+        <div class="trio">
+          <div class="card">
+            <h3 data-t="m1">Mobile</h3>
+            <p data-t="m1p">
+              Je conçois des applications mobiles avec Flutter et Dart, en
+              cherchant à créer des interfaces simples, utiles et adaptées aux
+              besoins du quotidien. Chaque projet me permet de progresser dans
+              la conception d'interfaces et la logique applicative.
+            </p>
+          </div>
+          <div class="card">
+            <h3 data-t="m2">Web</h3>
+            <p data-t="m2p">
+              Je développe des sites et interfaces web en HTML, CSS et
+              JavaScript, avec une attention particulière portée à la
+              structure, au responsive design et à l'expérience utilisateur.
+              Je consolide actuellement mes connaissances en frontend et
+              j'apprends progressivement le développement backend.
+            </p>
+          </div>
+          <div class="card">
+            <h3 data-t="m3">Données</h3>
+            <p data-t="m3p">
+              Je travaille avec SQL et la modélisation de bases de données,
+              notamment pour concevoir des structures cohérentes et exploiter
+              les données efficacement. Je développe également des
+              formulaires avec Windows Forms. Je commence en parallèle à
+              approfondir le data engineering, en particulier la conception de
+              pipelines et les différentes étapes de traitement des données.
+            </p>
+          </div>
+        </div>
+        <div class="mq" aria-hidden="true"><div id="mqt"></div></div>
+        <div class="duo">
+          <div class="card">
+            <h3 data-t="eng">Engagement</h3>
+            <p data-t="engp">
+              Je m’investis dans la vie étudiante en tant que conseillère du
+              club d’anglais et trésorière du club d’informatique de l’IIT.
+            </p>
+          </div>
+          <div class="card">
+            <h3 data-t="hs">Hors écran</h3>
+            <p data-t="hsp">
+              En dehors de l’informatique, je me ressource à travers la musique,
+              les jeux vidéo, le cyclisme et le basketball.
+          </div>
+        </div>
+        <div class="card cta">
+          <p data-t="seek">
+            Ouverte aux échanges et aux projets en développement web, mobile et
+            data.
+          </p>
+          <a class="btn" href="#contact" data-t="mail">M'écrire</a>
+        </div>
+      </section>
+      <section id="cv" class="view" hidden>
+        <div class="cvgrid">
+          <aside class="card cvside">
+            <div>
+              <h2 style="font-size: 1.6rem">Kouadio Ketsia</h2>
+              <p data-t="student">Étudiante</p>
+            </div>
+            <a
+              class="btn"
+              id="dlcv"
+              href="Docs/CV.pdf"
+              download="CV_Kouadio_Ketsia.pdf"
+              data-t="dl"
+              >Télécharger le PDF</a
+            >
+            <div>
+              <h3 data-t="cs">Compétences</h3>
+              <div class="pills">
+                <span class="pill">Flutter</span><span class="pill">Dart</span
+                ><span class="pill">Python</span><span class="pill">Java</span
+                ><span class="pill">C</span><span class="pill">HTML/CSS</span
+                ><span class="pill">JavaScript</span
+                ><span class="pill">Bootstrap</span><span class="pill">SQL</span
+                ><span class="pill">MySQL</span
+                ><span class="pill">SQL SERVER</span><span class="pill">C#</span
+                ><span class="pill">Git</span><span class="pill">Docker</span
+                ><span class="pill">.NET</span><span class="pill">Flask</span>
+              </div>
+            </div>
+            <div>
+              <h3 data-t="cl">Langues</h3>
+              <p data-t="clp">Français, anglais (C2)</p>
+            </div>
+            <div>
+              <h3 data-t="ch">Loisirs</h3>
+              <p data-t="hsp">Musique, jeux vidéo, cyclisme et basketball.</p>
+            </div>
+            <div>
+              <h3 data-t="contact">Contact</h3>
+              <p>
+                <a href="mailto:ketsia.kouadio@iit.ci">ketsia.kouadio@iit.ci</a
+                ><br /><a
+                  href="https://github.com/itsketii"
+                  target="_blank"
+                  rel="noopener"
+                  >github.com/itsketii</a
+                ><br />+225 07 12 97 68 56
+              </p>
+            </div>
+          </aside>
+          <div class="cvmain">
+            <div class="card">
+              <h2 data-t="cf">Formation</h2>
+              <div class="it">
+                <div class="it-head">
+                  <b>Études en Informatique et Génie Logiciel</b
+                  ><span class="period" data-t="fperiod"
+                    >2025 - Aujourd'hui</span
+                  >
+                </div>
+                <span data-t="f1"
+                  >Institut Ivoirien de Technologie (IIT) - 2e année</span
+                >
+              </div>
+              <div class="it">
+                <div class="it-head">
+                  <b data-t="bac">Baccalauréat</b
+                  ><span class="period" data-t="bacperiod">2025</span>
+                </div>
+                <span data-t="f2">Série D</span>
+              </div>
+            </div>
+            <div class="card">
+              <h2 data-t="cx">Expérience</h2>
+              <div class="it">
+                <div class="it-head">
+                  <b>Groupement Orange Service (GOS)</b
+                  ><span class="period" data-t="xperiod"
+                    >Août - Septembre 2026</span
+                  >
+                </div>
+                <span data-t="x1"
+                  >Stage de découverte en tant que support applicatif et DBA :
+                  apprentissage de la conteneurisation d'une application avec
+                  Docker, machines virtuelles, optimisation de script SQL et
+                  suivi de formations sur Docker, Kubernetes et comment se
+                  comporter en entreprise.</span
+                >
+              </div>
+            </div>
+            <div class="card">
+              <h2 data-t="cp">Projets</h2>
+              <div class="it">
+                <div class="it-head">
+                  <b>Outil de Web Scraping Python</b
+                  ><span class="pill project-tech">Python</span>
+                </div>
+                <span data-t="p1"
+                  >Application console qui extrait, nettoie et analyse des
+                  données produits sur Amazon avec Selenium.</span
+                >
+              </div>
+              <div class="it">
+                <div class="it-head">
+                  <b>Application de gestion universitaire C# / .NET 8</b
+                  ><span class="pill project-tech">C#</span>
+                </div>
+                <span data-t="p2"
+                  >Application Windows Forms pour gérer les étudiants,
+                  inscriptions, plannings, rôles et statistiques.</span
+                >
+              </div>
+              <div class="it">
+                <div class="it-head">
+                  <b>Courant CI</b
+                  ><span class="pill project-tech">Flutter</span>
+                </div>
+                <span data-t="p4"
+                  >Une application Flutter qui simule le suivi de l'électricité,
+                  avec des écrans mobile money.</span
+                >
+              </div>
+              <div class="it">
+                <div class="it-head">
+                  <b>Mini-Bibliothèque</b
+                  ><span class="pill project-tech">Flask</span>
+                </div>
+                <span data-t="p3"
+                  >Application Flask avec SQLite pour gérer livres, films,
+                  séries, jeux, musiques et mangas.</span
+                >
+              </div>
+              <div class="it">
+                <div class="it-head">
+                  <b>OM Bulk Deletion Portal - Conteneurisation Docker</b
+                  ><span class="pill project-tech">Docker</span>
+                </div>
+                <span data-t="p5"
+                  >Fork d'un portail Next.js / Node.js automatisant la
+                  transformation de fichiers Excel MSISDN en fichiers TXT, puis
+                  conteneurisation avec Docker Compose.</span
+                >
+              </div>
+            </div>
+            <div class="card">
+              <h2 data-t="cd">Distinctions</h2>
+              <div class="it">
+                <div class="it-head">
+                  <b>Business Game</b
+                  ><span class="period">2025</span>
+                </div>
+                <span data-t="d1">1re place, Business Game de l'IIT.</span>
+              </div>
+              <div class="it">
+                <div class="it-head">
+                  <b>Journée du Code</b
+                  ><span class="period">2025</span>
+                </div>
+                <span data-t="d2"
+                  >2e place au hackathon organisé par l'IIT.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="view" hidden>
+        <div class="ctgrid">
+          <div class="ctinfo">
+            <h2 data-t="k1">Parlons de votre projet</h2>
+            <p data-t="k2">
+              Une idée d'application ou de site ? Dites-moi ce que vous avez en
+              tête. Je réponds sous quelques jours, avec des questions ou une
+              première proposition.
+            </p>
+            <div>
+              <span class="lab" data-t="k3">M'écrire à :</span
+              ><a href="mailto:ketsia.kouadio@iit.ci">ketsia.kouadio@iit.ci</a>
+            </div>
+            <div>
+              <span class="lab" data-t="k4">Me suivre :</span>
+              <div class="soc"></div>
+            </div>
+          </div>
+          <form class="nb" id="cf">
+            <input
+              name="n"
+              required
+              placeholder="Votre nom"
+              data-ph="k5"
+              aria-label="Nom"
+            />
+            <input
+              name="e"
+              type="email"
+              required
+              placeholder="Votre e-mail"
+              data-ph="k6"
+              aria-label="E-mail"
+            />
+            <select name="t" required aria-label="Type">
+              <option value="" disabled selected data-t="k7">
+                Type de projet
+              </option>
+              <option data-t="k8">Application mobile</option>
+              <option data-t="k9">Site web</option>
+              <option data-t="k10">Base de données</option>
+              <option data-t="k11">Autre</option>
+            </select>
+            <select name="d" aria-label="Délai">
+              <option value="" disabled selected data-t="k12">
+                Délai souhaité
+              </option>
+              <option data-t="k13">Moins d'un mois</option>
+              <option data-t="k14">1 à 3 mois</option>
+              <option data-t="k15">Flexible</option>
+            </select>
+            <textarea
+              name="m"
+              required
+              placeholder="Détails du projet, contexte ou comment je peux vous aider"
+              data-ph="k16"
+              aria-label="Message"
+            ></textarea>
+            <button class="go" type="submit" data-t="k17">Envoyer</button>
+          </form>
+        </div>
+      </section>
+      <footer>
+        <a class="fband" href="#contact"
+          ><span class="flogo" aria-hidden="true">K</span
+          ><span class="ftxt"
+            ><b>Ketsia</b
+            ><small data-t="ft"
+              >Du mobile au web, de l'idée à l'interface.</small
+            ></span
+          ><span class="avail"
+            ><i></i><span data-t="fav">Disponible pour un stage</span></span
+          ><span class="farrow" aria-hidden="true"
+            ><svg viewBox="0 0 24 24">
+              <path d="M5 12h14M13 6l6 6-6 6" /></svg></span
+        ></a>
+        <div class="fbot"><span>© 2026 Kouadio Ketsia</span></div>
+      </footer>
+      <dialog id="modal">
+        <div class="mbox" id="mbody"></div>
+        <div class="mact">
+          <a class="btn" id="mgh" target="_blank" rel="noopener" data-t="gh"
+            >Voir sur GitHub</a
+          ><a
+            class="btn"
+            id="mdocker"
+            target="_blank"
+            rel="noopener"
+            data-t="docker"
+            hidden
+            >Voir sur Docker Hub</a
+          ><button class="btn soft" id="mclose" data-t="close">Fermer</button>
+        </div>
+      </dialog>
+    </div>
+    <script src="JavaScript/config.js"></script>
+    <script src="JavaScript/i18n.js"></script>
+    <script src="JavaScript/nav.js"></script>
+    <script src="JavaScript/projects.js"></script>
+    <script src="JavaScript/contact.js"></script>
+    <script src="JavaScript/animations.js"></script>
+  </body>
 </html>
