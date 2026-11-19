@@ -1,0 +1,9 @@
+# DOCUMENTS
+Docs/Template portfolio.mp4
+Docs/pp.jpg
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+node_modules/
+*.log
